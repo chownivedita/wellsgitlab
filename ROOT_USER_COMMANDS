@@ -1,0 +1,245 @@
+[admin@localhost ~]$ sudo su
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+[sudo] password for admin: 
+[root@localhost admin]# yum install git
+Loaded plugins: fastestmirror, langpacks
+Determining fastest mirrors
+ * base: centos.excellmedia.net
+ * extras: centos.excellmedia.net
+ * updates: centos.excellmedia.net
+base                                                     | 3.6 kB     00:00     
+extras                                                   | 3.4 kB     00:00     
+updates                                                  | 3.4 kB     00:00     
+(1/4): base/7/x86_64/group_gz                              | 166 kB   00:16     
+(2/4): extras/7/x86_64/primary_db                          | 187 kB   00:19     
+(3/4): updates/7/x86_64/primary_db                         | 5.2 MB   00:25     
+(4/4): base/7/x86_64/primary_db                            | 5.9 MB   00:38     
+Resolving Dependencies
+--> Running transaction check
+---> Package git.x86_64 0:1.8.3.1-14.el7_5 will be installed
+--> Processing Dependency: perl-Git = 1.8.3.1-14.el7_5 for package: git-1.8.3.1-14.el7_5.x86_64
+--> Processing Dependency: perl(Term::ReadKey) for package: git-1.8.3.1-14.el7_5.x86_64
+--> Processing Dependency: perl(Git) for package: git-1.8.3.1-14.el7_5.x86_64
+--> Processing Dependency: perl(Error) for package: git-1.8.3.1-14.el7_5.x86_64
+--> Running transaction check
+---> Package perl-Error.noarch 1:0.17020-2.el7 will be installed
+---> Package perl-Git.noarch 0:1.8.3.1-14.el7_5 will be installed
+---> Package perl-TermReadKey.x86_64 0:2.30-20.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                Arch         Version                Repository     Size
+================================================================================
+Installing:
+ git                    x86_64       1.8.3.1-14.el7_5       updates       4.4 M
+Installing for dependencies:
+ perl-Error             noarch       1:0.17020-2.el7        base           32 k
+ perl-Git               noarch       1.8.3.1-14.el7_5       updates        54 k
+ perl-TermReadKey       x86_64       2.30-20.el7            base           31 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+3 Dependent packages)
+
+Total download size: 4.5 M
+Installed size: 22 M
+Is this ok [y/d/N]: y     
+Downloading packages:
+warning: /var/cache/yum/x86_64/7/base/packages/perl-Error-0.17020-2.el7.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+Public key for perl-Error-0.17020-2.el7.noarch.rpm is not installed
+(1/4): perl-Error-0.17020-2.el7.noarch.rpm                 |  32 kB   00:10     
+(2/4): perl-TermReadKey-2.30-20.el7.x86_64.rpm             |  31 kB   00:09     
+Public key for perl-Git-1.8.3.1-14.el7_5.noarch.rpm is not installed  10:25 ETA 
+(3/4): perl-Git-1.8.3.1-14.el7_5.noarch.rpm                |  54 kB   00:26     
+(4/4): git-1.8.3.1-14.el7_5.x86_64.rpm                                                   | 4.4 MB  00:02:11     
+----------------------------------------------------------------------------------------------------------------
+Total                                                                            35 kB/s | 4.5 MB  00:02:11     
+Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Importing GPG key 0xF4A80EB5:
+ Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+ Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+ Package    : centos-release-7-5.1804.el7.centos.x86_64 (@anaconda)
+ From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+Is this ok [y/N]: y
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 1:perl-Error-0.17020-2.el7.noarch                                                            1/4 
+  Installing : perl-TermReadKey-2.30-20.el7.x86_64                                                          2/4 
+  Installing : git-1.8.3.1-14.el7_5.x86_64                                                                  3/4 
+  Installing : perl-Git-1.8.3.1-14.el7_5.noarch                                                             4/4 
+  Verifying  : 1:perl-Error-0.17020-2.el7.noarch                                                            1/4 
+  Verifying  : git-1.8.3.1-14.el7_5.x86_64                                                                  2/4 
+  Verifying  : perl-Git-1.8.3.1-14.el7_5.noarch                                                             3/4 
+  Verifying  : perl-TermReadKey-2.30-20.el7.x86_64                                                          4/4 
+
+Installed:
+  git.x86_64 0:1.8.3.1-14.el7_5                                                                                 
+
+Dependency Installed:
+  perl-Error.noarch 1:0.17020-2.el7  perl-Git.noarch 0:1.8.3.1-14.el7_5  perl-TermReadKey.x86_64 0:2.30-20.el7 
+
+Complete!
+[root@localhost admin]# git
+usage: git [--version] [--help] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty Git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and merge with another repository or a local branch
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+'git help -a' and 'git help -g' lists available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+[root@localhost admin]#  git --version
+git version 1.8.3.1
+[root@localhost admin]# mkdir git
+[root@localhost admin]# cd git
+[root@localhost git]# echo "# wellsgitlab" >> README.md
+[root@localhost git]# ssh -keygen
+Bad escape character 'ygen'.
+[root@localhost git]# ssh -keygen
+Bad escape character 'ygen'.
+[root@localhost git]# ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:+SBBYUxOP9m9RFkHXlYWLANc+IP3KgNzbA+6s/A6lw0 root@localhost.localdomain
+The key's randomart image is:
++---[RSA 2048]----+
+|     o*.  ..=++oO|
+|     =.. o =.+ * |
+|      o + . = +  |
+|       . o o =   |
+|      . S . o o  |
+|       . E =   . |
+|       .  @ o .  |
+|       .o= + o   |
+|       .+++ o    |
++----[SHA256]-----+
+[root@localhost git]# cat /root/.ssh/id_rsa.
+cat: /root/.ssh/id_rsa.: No such file or directory
+[root@localhost git]# cat /root/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJZuS1kMT6SlFOaiDbPWdHmUMuLeyh4ucjF4vxTro4H5aL9e+N+a5y4PFqLDYybR4UAxi0k2boDhvOv/w6cIzNVc7PvGk7Ej202w75Hyx1tuDtLUW0uK5s0Zds9lxLZZtqCsUnLJizlQPJ/GvdLc24qqZM6/FYWBgApF1FBUI0J14EfKvBgoT5EuFk+0Y/2UNlqBv8oZPqA8law/o9POWLzfCd0jI0pdka0Lq6os8itKkhy1OrylorvTMbCvNF2oI/EQAzm9YVKktKz9CIZD7Csh5dTqoae7rBz3auUgFKLOPJwyOz/H8P3SlFVYH7a0ADFPLgGlXjT10UzjUoDM+T root@localhost.localdomain
+[root@localhost git]# git config --global user.name "Nivedita"
+[root@localhost git]# git config --global user.email "chownivedita@gmail.com"
+[root@localhost git]# cd ~
+[root@localhost ~]# mkdir git
+[root@localhost ~]# cd git
+[root@localhost git]# echo "# wellsgitlab" >> README.md
+[root@localhost git]# ls -lrt
+total 4
+-rw-r--r--. 1 root root 14 Sep  3 13:24 README.md
+[root@localhost git]# git init
+Initialized empty Git repository in /root/git/.git/
+[root@localhost git]# ls -lrt
+total 4
+-rw-r--r--. 1 root root 14 Sep  3 13:24 README.md
+[root@localhost git]# ls -lrt
+total 4
+-rw-r--r--. 1 root root 14 Sep  3 13:24 README.md
+[root@localhost git]# ls -la
+total 4
+drwxr-xr-x. 3 root root  35 Sep  3 13:25 .
+dr-xr-x---. 7 root root 245 Sep  3 13:23 ..
+drwxr-xr-x. 7 root root 119 Sep  3 13:25 .git
+-rw-r--r--. 1 root root  14 Sep  3 13:24 README.md
+[root@localhost git]# git add .
+[root@localhost git]# git  status
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached <file>..." to unstage)
+#
+#	new file:   README.md
+#
+[root@localhost git]# git commit -m 'My first Commit'
+[master (root-commit) a9ecb9f] My first Commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+[root@localhost git]# git remote add origin git@github.com:chownivedita/wellsgitlab.git
+[root@localhost git]# git push -u origin master
+The authenticity of host 'github.com (192.30.253.112)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+RSA key fingerprint is MD5:16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 231 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:chownivedita/wellsgitlab.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+[root@localhost git]# cat README.md 
+# wellsgitlab
+[root@localhost git]# git pull
+Warning: Permanently added the RSA host key for IP address '192.30.253.113' to the list of known hosts.
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:chownivedita/wellsgitlab
+   a9ecb9f..ab9f01b  master     -> origin/master
+Updating a9ecb9f..ab9f01b
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+[root@localhost git]# whom am i
+bash: whom: command not found...
+Similar command is: 'who'
+[root@localhost git]# cat README.md 
+# wellsgitlab
+MY NAME IS NIVEDITA
+[root@localhost git]# vi README.md
+[root@localhost git]# git add .
+[root@localhost git]# git commit -m 'Testing Conflict'
+[master 0ced615] Testing Conflict
+ 1 file changed, 2 insertions(+)
+[root@localhost git]# git push -u origin master
+Counting objects: 5, done.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 302 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:chownivedita/wellsgitlab.git
+   ab9f01b..0ced615  master -> master
+Branch master set up to track remote branch master from origin.
+[root@localhost git]# 
