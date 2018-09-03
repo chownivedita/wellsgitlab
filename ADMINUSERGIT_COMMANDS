@@ -164,3 +164,82 @@ Total 6 (delta 0), reused 0 (delta 0)
 To git@github.com:chownivedita/wellsgitlab.git
    0ced615..202010d  master -> master
 [admin@localhost wellsgitlab]$ 
+current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 10, done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 581 bytes | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To git@github.com:chownivedita/wellsgitlab.git
+   0ced615..202010d  master -> master
+[admin@localhost wellsgitlab]$ git pull
+remote: Counting objects: 6, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From github.com:chownivedita/wellsgitlab
+   202010d..a9657fb  master     -> origin/master
+Updating 202010d..a9657fb
+Fast-forward
+ ADMINUSERGIT_COMMANDS | 166 ++++++++++++++++++++++++++++++++++
+ ROOT_USER_COMMANDS    | 245 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 411 insertions(+)
+ create mode 100644 ADMINUSERGIT_COMMANDS
+ create mode 100644 ROOT_USER_COMMANDS
+[admin@localhost wellsgitlab]$ clear
+
+[admin@localhost wellsgitlab]$ git branch develop
+[admin@localhost wellsgitlab]$ git branch
+  develop
+* master
+[admin@localhost wellsgitlab]$ git checkout develop
+Switched to branch 'develop'
+[admin@localhost wellsgitlab]$ git branch
+* develop
+  master
+[admin@localhost wellsgitlab]$ git checkout -b test
+Switched to a new branch 'test'
+[admin@localhost wellsgitlab]$ git branch
+  develop
+  master
+* test
+[admin@localhost wellsgitlab]$ git chekout
+git: 'chekout' is not a git command. See 'git --help'.
+
+Did you mean this?
+	checkout
+[admin@localhost wellsgitlab]$ git chekout master
+git: 'chekout' is not a git command. See 'git --help'.
+
+Did you mean this?
+	checkout
+[admin@localhost wellsgitlab]$ git checkout master
+Switched to branch 'master'
+[admin@localhost wellsgitlab]$ git branch
+  develop
+* master
+  test
+[admin@localhost wellsgitlab]$ git branch -D test
+Deleted branch test (was a9657fb).
+[admin@localhost wellsgitlab]$ git branch
+  develop
+* master
+[admin@localhost wellsgitlab]$ git branch -m develop development
+[admin@localhost wellsgitlab]$ git branch
+  development
+* master
+[admin@localhost wellsgitlab]$ git checkout development
+Switched to branch 'development'
+[admin@localhost wellsgitlab]$ vi README.md 
+[admin@localhost wellsgitlab]$ git add .
+[admin@localhost wellsgitlab]$ git commit -m 'Development Changes'
+[development ee1c100] Development Changes
+ 1 file changed, 4 insertions(+)
+[admin@localhost wellsgitlab]$ git push  origin development
+Counting objects: 5, done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 401 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:chownivedita/wellsgitlab.git
+ * [new branch]      development -> development
+[admin@localhost wellsgitlab]$ 
