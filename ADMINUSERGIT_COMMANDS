@@ -1,0 +1,166 @@
+Your public key has been saved in y.pub.
+The key fingerprint is:
+SHA256:kr1tdJsIpz6wDYXEV13xCZ+iq3r4YIbQqzOdEy4W/Fk admin@localhost.localdomain
+The key's randomart image is:
++---[RSA 2048]----+
+|     .   ... oo. |
+|      o .   . o.o|
+|     . o     . +.|
+|    . .o.   . .  |
+|  .. .o.S o..    |
+|   o..=E B o.o   |
+|    =o=O+ +.o    |
+|   =.B+o+o.      |
+|  ..+ ..=+       |
++----[SHA256]-----+
+[admin@localhost ~]$ cat y.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyZUHz2HixMpfaGbJ/fIXE0AbgyZE1ZUOtF1tmMDGIxKw560PsHw8scez4wSYyoTE5SaKBntoJYnaU/9ooeCHnVcF9bA4cytMFGw0BxCTFP8tyb8ltjT9fbTO2XqtKscwKGzEXcXUpon3P+fPxBCNLd2pPrZDD4ZK7yWbD76nf5Ra7hfP2vxpKycI9kry2r7pV5kdz2K9CqVVF49Bll8NQFMChCy4Za5h7+U0qDmu/Teq05NWcKVu/k7gpnat89NlNclOjH7CmggYccAF7CkoNrGkbmxD2tvnnnrj/8+aQRK9aRx19IOsWRZ1KOn8SuO//Jq4bKbIsxNu1l2d3YhNB admin@localhost.localdomain
+[admin@localhost ~]$ clear
+
+[admin@localhost ~]$ git clone git@github.com:chownivedita/wellsgitlab.git
+Cloning into 'wellsgitlab'...
+The authenticity of host 'github.com (192.30.253.113)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+RSA key fingerprint is MD5:16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,192.30.253.113' (RSA) to the list of known hosts.
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[admin@localhost ~]$ git clone git@github.com:chownivedita/wellsgitlab.git
+Cloning into 'wellsgitlab'...
+Warning: Permanently added the RSA host key for IP address '192.30.253.112' to the list of known hosts.
+Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+[admin@localhost ~]$ cd .ssh
+[admin@localhost .ssh]$ ls
+known_hosts
+[admin@localhost .ssh]$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/admin/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/admin/.ssh/id_rsa.
+Your public key has been saved in /home/admin/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:OQJFQ4I6iManXyC8T3YrGq9efGdWwafn/tlWbm04kcs admin@localhost.localdomain
+The key's randomart image is:
++---[RSA 2048]----+
+|   ..o=          |
+|  .  o ..        |
+|=.  .    o .     |
+|== o .   .+      |
+|..= . . So .   . |
+| o.o o ...o   o .|
+| .=oo..+   . . =o|
+|  ++..+   .   E.=|
+|.+o..      ..o.= |
++----[SHA256]-----+
+[admin@localhost .ssh]$ cat /home/admin/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC52MOgkGbMPD5AKXhGGqN8G/BkPYZ3/xhMH3j8pLkoQXP4sJozY9Ty6c9+Kxw6WNn4IFSnh1o/f2MtjnCgztpedHDfXBlTHqQkshKpAxPhk65oQmcQjAUIyuvnjfrtBNdj0wDkXI8Xj4bAAgkkNVxMVCLgS5QI9VTyQ5boeTwV6OxM3iuNVXzZMBEFGYs3+32ZvTiqj7WJRmi4zQ1XSj2Ht8j1epQ4/C+GHk7lVOoutsUp6sqa3n4701rsdE8U3DmPiAPYH+/U960FeYy27DVkiWXrvpn4hdSzsP4Aiz+TJHMgoJRoBFqZPnZgoGPxacijrA/xdhq37sVP+5nZYojx admin@localhost.localdomain
+[admin@localhost .ssh]$ git clone git@github.com:chownivedita/wellsgitlab.git
+Cloning into 'wellsgitlab'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+[admin@localhost .ssh]$ ls -lrt
+total 12
+-rw-r--r--. 1 admin admin  803 Sep  3 13:48 known_hosts
+-rw-r--r--. 1 admin admin  409 Sep  3 13:50 id_rsa.pub
+-rw-------. 1 admin admin 1675 Sep  3 13:50 id_rsa
+drwxrwxr-x. 3 admin admin   35 Sep  3 13:52 wellsgitlab
+[admin@localhost .ssh]$ cd wellsgitlab/
+[admin@localhost wellsgitlab]$ vi README.md 
+[admin@localhost wellsgitlab]$ git add .
+[admin@localhost wellsgitlab]$ git commit -m 'Modified Read Me'
+[master ab9f01b] Modified Read Me
+ 1 file changed, 1 insertion(+)
+[admin@localhost wellsgitlab]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 5, done.
+Writing objects: 100% (3/3), 270 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:chownivedita/wellsgitlab.git
+   a9ecb9f..ab9f01b  master -> master
+[admin@localhost wellsgitlab]$ vi README.md 
+[admin@localhost wellsgitlab]$ git add .
+[admin@localhost wellsgitlab]$ git commit -m "Testing Conflict with admin"
+[master cf78115] Testing Conflict with admin
+ 1 file changed, 1 insertion(+)
+[admin@localhost wellsgitlab]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+To git@github.com:chownivedita/wellsgitlab.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'git@github.com:chownivedita/wellsgitlab.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first merge the remote changes (e.g.,
+hint: 'git pull') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+[admin@localhost wellsgitlab]$ git pull
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:chownivedita/wellsgitlab
+   ab9f01b..0ced615  master     -> origin/master
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+[admin@localhost wellsgitlab]$ vi README.md 
+[admin@localhost wellsgitlab]$ git add .
+[admin@localhost wellsgitlab]$ git commit -m "Testing Conflict Resolved"
+[master 202010d] Testing Conflict Resolved
+[admin@localhost wellsgitlab]$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 10, done.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 581 bytes | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To git@github.com:chownivedita/wellsgitlab.git
+   0ced615..202010d  master -> master
+[admin@localhost wellsgitlab]$ 
