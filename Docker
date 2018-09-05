@@ -778,3 +778,53 @@ Error creating proxy: The connection is closed (g-io-error-quark, 18)
 
 (gedit:7467): dconf-WARNING **: failed to commit changes to dconf: The connection is closed
 [root@localhost docker]# 
+    
+    
+    [root@localhost ~]# cd docker
+[root@localhost docker]# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+apache              latest              de0cfd1f15da        17 hours ago        221 MB
+<none>              <none>              e99d62754f34        17 hours ago        115 MB
+docker.io/ubuntu    16.04               52b10959e8aa        13 days ago         115 MB
+docker.io/ubuntu    latest              16508e5c265d        13 days ago         84.1 MB
+[root@localhost docker]# clear
+
+[root@localhost docker]# docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+apache              latest              de0cfd1f15da        17 hours ago        221 MB
+<none>              <none>              e99d62754f34        17 hours ago        115 MB
+docker.io/ubuntu    16.04               52b10959e8aa        13 days ago         115 MB
+docker.io/ubuntu    latest              16508e5c265d        13 days ago         84.1 MB
+[root@localhost docker]# docker run -p 80:80 apache
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.17.0.2. Set the 'ServerName' directive globally to suppress this message
+[root@localhost docker]# docker run -d -p 80:80 apache
+200d2c36e5fa2b53d04acfeaa096c255c2a77930b9e08822107a37b128dd3e19
+[root@localhost docker]# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                NAMES
+200d2c36e5fa        apache              "/bin/sh -c /root/..."   About a minute ago   Up 59 seconds       0.0.0.0:80->80/tcp   festive_saha
+[root@localhost docker]# docker exec -it 200d2c36e5fa bash
+root@200d2c36e5fa:/# cd /var/www/html/
+root@200d2c36e5fa:/var/www/html# ls
+index.html
+root@200d2c36e5fa:/var/www/html# echo "HEEEE NIVI" >index.html 
+root@200d2c36e5fa:/var/www/html# exit             
+exit
+[root@localhost docker]# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
+200d2c36e5fa        apache              "/bin/sh -c /root/..."   6 minutes ago       Up 5 minutes        0.0.0.0:80->80/tcp   festive_saha
+[root@localhost docker]# docker stop 200d2c36e5fa
+200d2c36e5fa
+[root@localhost docker]# docker pas
+docker: 'pas' is not a docker command.
+See 'docker --help'
+[root@localhost docker]# docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[root@localhost docker]# docker run -d -p 80:80 apache
+062e3c6ddb622e2c80a3c67c82c4036c858c395941953e7524532d3b9bb86e59
+[root@localhost docker]# docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
+062e3c6ddb62        apache              "/bin/sh -c /root/..."   3 seconds ago       Up 2 seconds        0.0.0.0:80->80/tcp   zealous_mccarthy
+[root@localhost docker]# 
+
+    
+    
